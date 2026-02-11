@@ -27,6 +27,15 @@ function Home() {
             link: "/perfectcolourfinder",
             id: "project3",
             img:"/project3.png"
+        },
+        {
+            index: 4,
+            name: "Simple Pomodoro",
+            description:
+                "A React-based focus timer that tracks real-time productivity and visualizes sessions using Chart.js. It supports start/pause controls, custom time additions, dynamic theming, and stores focus data in localStorage to display progress trends over time.",
+            link: "/pomodoro",
+            id: "project4",
+            img:"#"
         }
 
     ]

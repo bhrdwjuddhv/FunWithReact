@@ -4,6 +4,7 @@ import BgChanger from "./pages/01_bgchanger.jsx";
 import NotFound from "./pages/NotFound";
 import RandomDog from "./pages/02_randomdog.jsx";
 import Heropage from "./pages/03_findColours.jsx";
+import Pomodoro from "./pages/04_pomodoro.jsx";
 
 function App() {
     return (
@@ -13,6 +14,8 @@ function App() {
                 <Route path="/bgchanger" element={<BgChanger />} />
                 <Route path="/randomdog" element={<RandomDog />} />
                 <Route path="/perfectcolourfinder" element={<Heropage />} />
+                <Route path="/pomodoro" element={<Pomodoro />} />
+
 
                 {/* 404 route — ALWAYS LAST */}
                 <Route path="*" element={<NotFound />} />
