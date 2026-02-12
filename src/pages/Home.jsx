@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "motion/react"
 
 function Home() {
     const info = [
@@ -35,19 +36,19 @@ function Home() {
                 "A React-based focus timer that tracks real-time productivity and visualizes sessions using Chart.js. It supports start/pause controls, custom time additions, dynamic theming, and stores focus data in localStorage to display progress trends over time.",
             link: "/pomodoro",
             id: "project4",
-            img:"#"
+            img:"/project4.png"
         }
 
     ]
     return (
         <>
-        <section className="min-h-screen scroll-smooth flex flex-col justify-center items-center text-center px-6 bg-gray-50">
-
+        <section className="min-h-screen bg-[url('/herosection.png')] bg-cover bg-center scroll-smooth flex flex-col justify-center items-center text-center px-6 bg-gray-50">
+        <div className="flex flex-col justify-center items-center text-center bg-[#ffffff]/60 py-3 rounded-lg">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Fun React Projects
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mb-10">
+            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mb-10">
                 A collection of small, interactive React experiments — built to learn,
                 break, fix, and have fun along the way.
             </p>
@@ -71,52 +72,62 @@ function Home() {
                     About Me
                 </button>
             </div>
+        </div>
 
         </section>
-    <div className="scroll-smooth relative">
-        <div className="sticky top-0 h-auto flex flex-col items-center justify-center bg-gradient-to-b from-indigo-800 to-purple-800 text-white">
-            {info.map(({name,description,link,index,img})=>{
-                return (
-                    <div className="flex sticky flex-col gap-4 lg:flex-row h-full w-full p-10 items-start" id={index}>
+        <div className="min-h-screen bg-slate-950 flex flex-col lg:flex-row items-center justify-center gap-4">
 
-                        <div className="flex flex-col gap-2">
-                            <p className="text-9xl self-start bg-gradient-to-r from-[#38bdf8] to-[#a5b4fc] text-transparent h-auto pb-2 bg-clip-text font-extrabold tracking-tight">
-                                Project {index}
-                            </p>
+            {info.map(({index,name,description,link,id,img}) => {
+               return (<div className="bg-gray-800 rounded-xl p-6
+                flex flex-col items-center
+                gap-4 w-80 hover:scale-105 duration-200 transition-all">
 
-                            <p className="text-8xl text-[#e0f2fe] pb-4">{name}</p>
+                    <div className="relative overflow-hidden rounded-xl
+                     p-4 h-48 w-full
+                     bg-gradient-to-r
+                     from-[#000000] via-[#0f0c29] to-[#302b63]
+                flex items-center justify-center
+                hover:from-indigo-900 hover:to-purple-600
+                transition-all duration-500 ease-in">
 
-                            {/* centered paragraph */}
-                            <p className="self-start pb-3 text-left text-center max-w-2xl text-[#c7d2fe] leading-relaxed">
-                                {description}
-                            </p>
+                        <motion.img
+                            src={img}
+                            className="absolute h-40 w-auto rounded-xl"
+                            style={{
+                                top: "50%",
+                                left: "50%",
+                            }}
+                            initial={{
+                                rotate: 22.5,
+                                x: -50,
+                                y: -50,
+                                scale: 1
+                            }}
+                            whileHover={{
+                                rotate: 0,
+                                x: "-50%",
+                                y: "-50%",
+                                scale: 1.1
+                            }}
+                            transition={{
+                                duration: 0.6,
+                                ease: "easeInOut"
+                            }}
+                        />
 
-                            <Link to={link}>
-                                <button className="cursor-pointer px-6 py-3 rounded-lg
-                                                      border border-black
-                                                      hover:bg-black hover:text-white
-                                                      transition">
-                                    Go there!
-                                </button>
-                            </Link>
-                        </div>
+                    </div>
 
-                        {/* centered image */}
+                    <span className="text-white text-2xl font-bold">{name}</span>
+                    <p className="text-gray-300 text-sm text-center font-mono leading-relaxed">{description}</p>
+                    <div className="flex flex-col lg-flex-row">
+                        <Link to={link}><button className="p-2 bg-[#ffffff] cursor-pointer hover:text-white py-5 px-6 hover:bg-black rounded-lg duration-300 transition-all text-black">Go there!</button></Link>
+                    </div>
 
-                        <div className="flex flex-row items-center justify-center gap-2">
-
-                            <img
-                                src={img}
-                                className="w-auto h-96 rounded"
-                            />
-                        </div>
+                </div>
+            )})}
 
 
-            </div>
-            )
-            })}
         </div>
-    </div>
         </>
     );
 }
