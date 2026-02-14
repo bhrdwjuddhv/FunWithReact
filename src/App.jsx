@@ -6,6 +6,7 @@ import RandomDog from "./pages/02_randomdog.jsx";
 import Heropage from "./pages/03_findColours.jsx";
 import Pomodoro from "./pages/04_pomodoro.jsx";
 import CardPage from "./pages/componentPage/CardPage.jsx";
+import ProfileCardPage from "./pages/componentPage/profileCardPage.jsx";
 function App() {
     return (
         <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/perfectcolourfinder" element={<Heropage />} />
                 <Route path="/pomodoro" element={<Pomodoro />} />
                 <Route path="/generalcard" element={<CardPage />} />
+                <Route path="/profilecard" element={<ProfileCardPage />} />
 
 
                 {/* 404 route — ALWAYS LAST */}

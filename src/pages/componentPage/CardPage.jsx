@@ -2,6 +2,7 @@ import { useState } from "react";
 import Card from "../../components/card/card.jsx";
 import BottomBar from "../../assets/findColours/bottomBar.jsx";
 import InputBox from "../../components/card/input.jsx";
+import CardDependencies from "../../components/card/dependencies.jsx";
 
 export default function CardPage() {
 
@@ -27,7 +28,10 @@ export default function CardPage() {
         }}
         >
             <div className="flex lg:flex-row flex-col space-around items-center justify-center gap-8">
+                <div className="flex flex-col gap-4">
+                    <CardDependencies />
                 <InputBox data={data} setData={setData} colors={colors}/>
+                </div>
             <Card colors={colors} data={data} />
 
             </div>
