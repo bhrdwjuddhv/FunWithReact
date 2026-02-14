@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "motion/react"
+import {useState} from "react";
+import CardPage from "./componentPage/CardPage.jsx";
+import ComponentList from "../components/componentlist.jsx";
 
 function Home() {
+    const [frame, setFrame] = useState('null');
     const info = [
         {
             index:1 ,
@@ -75,7 +79,14 @@ function Home() {
         </div>
 
         </section>
-        <div className="min-h-screen bg-slate-950 flex flex-col lg:flex-row items-center justify-center gap-4">
+        <div
+            className="min-h-screen bg-slate-950 flex flex-col lg:flex-row items-center justify-center gap-4"
+            style={{
+                backgroundImage: `radial-gradient(circle at 0.5px 0.5px, rgba(6,182,212,0.2) 0.75px, transparent 0)`,
+                backgroundSize: "8px 8px",
+                backgroundRepeat: "repeat",
+            }}
+            >
 
             {info.map(({index,name,description,link,id,img}) => {
                return (<div className="bg-gray-800 rounded-xl p-6
@@ -126,6 +137,18 @@ function Home() {
                 </div>
             )})}
 
+
+        </div>
+        <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center gap-8"
+             style={{
+                 backgroundImage: `radial-gradient(circle at 0.5px 0.5px, rgba(6,182,212,0.2) 0.75px, transparent 0)`,
+                 backgroundSize: "8px 8px",
+                 backgroundRepeat: "repeat",
+             }}
+
+        >
+            <span className="relative text-center min-h-screen font-bold text-7xl font-mono text-white self-start justify-self-start pl-10 pt-6">Components</span>
+            <ComponentList />
 
         </div>
         </>

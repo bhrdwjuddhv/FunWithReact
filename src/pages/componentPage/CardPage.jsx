@@ -6,7 +6,7 @@ import InputBox from "../../components/card/input.jsx";
 export default function CardPage() {
 
     const [colors, setColors] = useState({
-        background: "#a5a5a5",
+        background: "#e7d8f1",
         primary: "#302b63",
         text: "#000000",
         accent: "#f59e0b"
@@ -19,7 +19,13 @@ export default function CardPage() {
     })
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center">
+        <div className="min-h-screen bg-neutral-900 flex flex-col items-center justify-center"
+        style={{
+            backgroundImage: `radial-gradient(circle at 0.5px 0.5px, rgba(6,182,212,0.2) 0.5px, transparent 0)`,
+            backgroundSize: "8px 8px",
+            backgroundRepeat: "repeat",
+        }}
+        >
             <div className="flex lg:flex-row flex-col space-around items-center justify-center gap-8">
                 <InputBox data={data} setData={setData} colors={colors}/>
             <Card colors={colors} data={data} />

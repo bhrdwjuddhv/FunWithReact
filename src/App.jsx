@@ -15,7 +15,7 @@ function App() {
                 <Route path="/randomdog" element={<RandomDog />} />
                 <Route path="/perfectcolourfinder" element={<Heropage />} />
                 <Route path="/pomodoro" element={<Pomodoro />} />
-                <Route path="/components" element={<CardPage />} />
+                <Route path="/generalcard" element={<CardPage />} />
 
 
                 {/* 404 route — ALWAYS LAST */}
